@@ -1,0 +1,358 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'Verdana';
+    margin: auto;
+}
+
+.contenedor {
+    max-width: 1100px;
+    width: 90%;
+    margin: auto;
+}
+
+/* Header */
+
+header {
+    text-align: center;
+    background-image: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 600px;
+}
+
+header .container .texto {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 200px 0;
+}
+
+header .container .texto .titulo {
+    font-family: 'Anton', sans-serif;
+    color: #414239;
+    font-size: 4em;
+}
+
+.titulo-pelicula {
+    font-family: 'Lobster', cursive;
+    color: #9e0947;
+    font-size: 2.5em;
+}
+
+/* Main */
+.main .pelicula .container {
+    border-bottom: 1px dashed #d7d8cb;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+}
+
+.main .pelicula .container .texto {
+    width: 100%;
+}
+
+.main .pelicula .container .foto,
+.main .pelicula .container .reparto {
+    width: 22.5%;
+}
+
+.main .pelicula .container .sinopsis {
+    width: 30%;
+}
+
+.main .pelicula .container .video {
+    width: 25%;
+}
+
+.main .pelicula .container .foto,
+.main .pelicula .container .foto img {
+    margin: auto;
+}
+
+.main .pelicula .container .foto img:hover {
+    opacity: 0.8;
+}
+
+.main .pelicula .container .foto img {
+    width: 80%;
+    display: block;
+}
+
+.main .pelicula .container .reparto ul li[famoso='principal'] {
+    font-weight: bold;
+}
+
+.main .pelicula .container .reparto ul li[famoso='secundario'] {
+    font-style: italic;
+}
+
+.main .pelicula .container .video {
+    margin: auto;
+}
+
+.main .pelicula .container .video video {
+    width: 120%;
+}
+
+.main .pelicula .container .sinopsis .texto-sinopsis {
+    text-align: justify;
+}
+
+
+.main .pelicula .container > * {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+.main .pelicula .container .sinopsis .subtitulo,
+.main .pelicula .container .reparto .subtitulo {
+    font-size: 1.2em;
+    color: #ce105c;
+    font-family: 'Anton';
+    padding-bottom: 20px;
+}
+
+.main .pelicula .container .reparto ul li {
+    list-style-image: url('https://goo.gl/6hPSSH');
+}
+
+.main .pelicula {
+    margin-bottom: 50px;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #FFF;
+}
+
+footer .container {
+    display: flex;
+    padding: 20px 0;
+}
+
+footer .container .info-autor {
+    width: 50%;
+}
+
+footer .container .derechos-reservados {
+    width: 50%;
+    text-align: right;
+}
+
+/* Media Queries */
+
+
+@media screen and (max-width: 500px) {
+    
+    header {
+        height: 200px;
+    }
+
+    header .container .texto {
+        padding: 48px 0;
+    }
+
+    header .container .texto .titulo {
+        text-align: center;
+        font-size: 2.5em;
+    }
+        
+    .main {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .main .pelicula:first-of-type .container {
+        padding-bottom: 0px;
+    }
+
+    .main .pelicula {
+        margin-bottom: 13px;
+    }
+
+    .main .pelicula:not(:first-of-type) {
+        width: 50%;
+    }
+
+    .main .pelicula:not(:first-of-type) .container {
+        border-bottom: none;
+    }
+
+    .main .pelicula:not(:first-of-type) .container .texto .titulo-pelicula {
+        font-size: 1.15em;
+        position: absolute;
+    }
+    
+    .main .pelicula:first-of-type .container .reparto,
+    .main .pelicula:first-of-type .container .video,
+    .main .pelicula:first-of-type .container .sinopsis .subtitulo,
+    .main .pelicula:not(:first-of-type) .container .sinopsis,
+    .main .pelicula .container .video {
+        display: none;
+    }
+    
+    .main .pelicula:not(:first-of-type) .container .texto {
+        z-index: 1000;
+    }
+    
+    .main .pelicula:not(:first-of-type) .container .foto {
+        margin-top: -10px;
+    }
+
+    .main .pelicula:first-of-type .container .foto,
+    .main .pelicula:first-of-type .container .sinopsis {
+        width: 50%;
+    }
+    
+    .main .pelicula:first-of-type,
+    .main .pelicula:not(:first-of-type) .container .foto,
+    .main .pelicula:not(:first-of-type) .container .reparto {
+        width: 100%;
+    }
+    
+    .main .pelicula:first-of-type .container .texto .titulo-pelicula {
+        font-size: 1.7em;
+        padding-bottom: 10px;
+    }
+
+    .main .pelicula:first-of-type .container .sinopsis .texto-sinopsis {
+        font-size: 0.75em;
+    }
+
+    .main .pelicula .container .reparto .subtitulo {
+        font-size: 0.8em;
+        display: inline;
+    }
+    
+    .main .pelicula .container .reparto ul {
+        display: inline;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .main .pelicula .container .reparto ul li {
+        font-size: 0.7em;
+        display: inline-block;
+    }
+    
+    .main .pelicula .container .reparto ul li::after {
+        content: ",";
+    }
+
+    .main .pelicula .container .reparto ul li:last-of-type::after {
+        content: "."
+    }
+
+    footer .container {
+        flex-wrap: wrap;
+    }
+    
+    footer .container .info-autor {
+        margin-bottom: 20px;
+    }
+
+    footer .container .info-autor,
+    footer .container .derechos-reservados {
+        width: 100%!important;
+        text-align: left;
+        font-size: 0.8em;
+    }
+
+}
+
+@media screen and (max-width: 801px) and (min-width: 501px) {
+    
+    .main {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+
+    .main .pelicula {
+        width: 50%;
+    }
+    
+    header {
+        height: 300px;
+    }
+    
+    header .container .texto {
+        padding: 75px 0;
+    }
+
+    header .container .texto .titulo {
+        text-align: center;
+    }
+
+    .titulo-pelicula {
+        font-size: 1.5em;
+        text-align: center;
+    }
+    
+    .main .pelicula .container .texto {
+        order: 1;
+    }
+
+    .main .pelicula .container .foto,
+    .main .pelicula .container .sinopsis {
+        display: none;
+    }
+    
+    .main .pelicula .container .reparto .subtitulo {
+        font-size: 0.9em;
+        display: inline;
+    }
+    
+    .main .pelicula .container .reparto ul {
+        display: inline;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .main .pelicula .container .reparto ul li {
+        font-size: 0.8em;
+        display: inline-block;
+    }
+    
+    .main .pelicula .container .reparto ul li::after {
+        content: ",";
+    }
+
+    .main .pelicula .container .reparto ul li:last-of-type::after {
+        content: "."
+    }
+    
+    .main .pelicula .container {
+        flex-direction: column-reverse;
+        border-bottom: none;
+    }
+
+    .main .pelicula .container .video,
+    .main .pelicula .container .reparto {
+        width: 100%;
+        margin: auto;
+    }
+
+    .main .pelicula .container .video video {
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        padding: 12px 0;
+    }
+
+    footer .container .info-autor,
+    footer .container .derechos-reservados {
+        font-size: 0.8em;
+    }
+
+}
